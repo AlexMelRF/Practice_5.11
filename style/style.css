@@ -10,6 +10,7 @@ header{
     height: 200px;
     background: url("../images/device1.jpg") bottom no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 .blur{
@@ -24,32 +25,35 @@ header{
 }
 
 h1{
-    color: rgb(201, 22, 22);
+    color: rgb(98, 31, 143);
     font-size: 15em;
-    /* z-index: 1; */
+    position: absolute;
+    z-index: -1;
 }
 
-/* h1:before{
-    content: "";  
-} */
+main{
+    display: flex;
+    justify-content: space-between;
+}
 
 .content{
     width: 80%;
     padding: 40px 0 30px;
 }
 
+.content article:nth-child(2n){
+    color: orange;
+}
+
 article{
     width: 90%;
     margin: 0 auto 30px;
     padding: 5px 15px;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(98, 31, 143);
 }
 
 article a{
-    color: black;
+    color: rgb(98, 31, 143);
     text-decoration: none;
 }
 
@@ -59,6 +63,11 @@ article a:hover{
 
 article h2{
     margin-bottom: 5px;
+    position: relative;
+}
+
+.new h2::before{
+    content: url("../images/icons8-new-30.png");
 }
 
 .article_meta{
@@ -67,29 +76,42 @@ article h2{
 
 article img{
     width: 100%;
-    height: 300px;
+    height: 384px;
     object-fit: cover;
 }
 
-main{
-    display: flex;
-    justify-content: space-between;
-}
-
 .list_news{
-    display: inline-block;
-    margin: 10px;
+    width: 15%;
+    height: fit-content;
+    margin: 100px 10px;
     padding: 10px;
     border-style: solid;
+    border-color: rgb(98, 31, 143);
     border-width: 1px;
 }
 
-.list_news>p{
+
+.list_news p{
     text-align: center;
+    font-weight: bold;
+    color: rgb(98, 31, 143);
 }
 
-.list_news>ul{
+.list_news ul{
     list-style: none;
+}
+
+.list_news li{
+    margin-bottom: 20px;
+}
+
+.list_news a{
+    text-decoration: none;
+    color: rgb(98, 31, 143)
+}
+
+.list_news a:hover{
+    color: rgb(2, 2, 63);
 }
 
 footer{
@@ -98,11 +120,9 @@ footer{
     text-align: center;
 }
 
-footer .links>a{
-    margin-bottom: 50px;
-}
-footer .links>a{
+footer .links a{
     color: rgb(20, 3, 61);
+    margin-bottom: 50px;
     padding: 0 25px;
     font-size: medium;
     font-weight: bold;
@@ -113,5 +133,4 @@ footer .links>a{
 
 .copyright{
     color: rgb(36, 12, 13);
-
 }
